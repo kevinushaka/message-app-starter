@@ -1,17 +1,22 @@
 <template>
   <div class="app">
-    <HelloWorld :msg="'Welcome to Your Vue.JS App'"/>
+    
+    <div>
+      <router-view></router-view>
+    <Menu/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Menu from "./components/Menu.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Menu,
   }
+
 };
 </script> 
 
@@ -19,11 +24,15 @@ export default {
 html, body {
   height: 100%;
 }
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 50em;
+  border: 1px solid;
   color: #2c3e50;
 }
+
 </style>
